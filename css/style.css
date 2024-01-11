@@ -1,0 +1,18 @@
+#todoCards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.todoCard {
+    position: relative; 
+    display: flex;
+
+   
+}
+
+.delBtn {
+    position: absolute; 
+    bottom: 10px;
+    right: 10px;
+    font-size: 50%;
+}
