@@ -32,40 +32,37 @@ function addTask(){                                        // Fonction pour ajou
 
 }
 
-// Fonction pour mettre à jour la nouvelle carte
-function updateNewCard(newTask) {
-    // Sélectionne la zone de texte de la nouvelle tâche
-    const newTextArea = newTask.querySelector('.task');
 
-    // Ajoute un événement pour détecter les changements dans la zone de texte
-    newTextArea.addEventListener('input', function () {
-        // Met à jour le texte de la nouvelle carte en fonction de la zone de texte
-        updateCardText(newTask, newTextArea.value);
+function updateNewCard(newTask) {// Fonction pour mettre à jour la nouvelle carte
+   
+    const newTextArea = newTask.querySelector('.task'); // Sélectionne la zone de texte de la nouvelle tâche
+
+    newTextArea.addEventListener('input', function () {   // Ajoute un événement pour détecter les changements dans la zone de texte
+        updateCardText(newTask, newTextArea.value);         // Met à jour le texte de la nouvelle carte en fonction de la zone de texte
+
     });
 
-    // Ajoute un événement pour détecter le clic sur l'icône de la corbeille
-    const delBtn = newTask.querySelector('.delBtn');
+    const delBtn = newTask.querySelector('.delBtn');     // Ajoute un événement pour détecter le clic sur l'icône de la corbeille
     delBtn.addEventListener('click', function () {
-        // Appelle la fonction pour supprimer la carte
-        deleteCard(newTask);
+        deleteCard(newTask);          // Appelle la fonction pour supprimer la carte
+
     });
 }
 
-// Fonction pour mettre à jour le texte de la carte
-function updateCardText(card, newText) {
-    // Sélectionne la zone de texte de la carte
-    const cardTextArea = card.querySelector('.task');
-    // Met à jour le texte de la carte en fonction de la nouvelle valeur
-    cardTextArea.value = newText;
+function updateCardText(card, newText) {   // Fonction pour mettre à jour le texte de la carte
+
+    const cardTextArea = card.querySelector('.task');     // Sélectionne la zone de texte de la carte
+
+    cardTextArea.value = newText;     // Met à jour le texte de la carte en fonction de la nouvelle valeur
 }
 
-// Fonction pour supprimer la carte
-function deleteCard(card) {
-    // Supprime la carte du conteneur des cartes de tâches
-    taskContainer.removeChild(card);
+function deleteCard(card) { // Fonction pour supprimer la carte
 
-    // Décrémente le compteur de cartes
-    cardCount--;
-    // Met à jour le texte de l'élément qui affiche le nombre de cartes
-    cardCountElement.textContent = cardCount;
+    taskContainer.removeChild(card);     // Supprime la carte du conteneur des cartes de tâches
+
+
+    cardCount--;     // Décrémente le compteur de cartes
+
+    cardCountElement.textContent = cardCount;     // Met à jour le texte de l'élément qui affiche le nombre de cartes
+
 }
